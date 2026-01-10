@@ -3,7 +3,7 @@ import { Hero } from "@/components/hero"
 import { SlotOverview } from "@/components/slot-overview"
 import { FeaturesGrid } from "@/components/features-grid"
 import { SoftCta } from "@/components/soft-cta"
-import { CommentsSection } from "@/components/comments-section"
+import CommentsSection from "@/components/comments-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
