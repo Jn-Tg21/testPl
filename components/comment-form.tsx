@@ -89,31 +89,129 @@
 
 import { useState } from "react"
 import { addComment } from "@/lib/actions"
+import { Send, User, MessageSquare, Shield, Sparkles } from "lucide-react"
 
 export function CommentForm() {
   const [content, setContent] = useState("")
+  const [author, setAuthor] = useState("Anonimowy Gracz")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [characterCount, setCharacterCount] = useState(0)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!content.trim() || isSubmitting || content.length < 10) return
+
+    setIsSubmitting(true)
+    
+    try {
+      await addComment({
+        author: author.trim() || "Anonimowy Gracz",
+        content: content.trim(),
+      })
+      
+      setContent("")
+      setCharacterCount(0)
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value
+    setContent(value)
+    setCharacterCount(value.length)
+  }
 
   return (
-    <form
-      action={async () => {
-        await addComment({
-          author: "Anon",
-          content,
-        })
-        setContent("")
-      }}
-      className="mt-6"
-    >
-      <textarea
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        required
-        className="w-full border p-2"
-      />
+    <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Заголовок */}
+      <div className="flex items-center gap-3">
+        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#d67413]/20 to-[#b3590d]/10 flex items-center justify-center">
+          <MessageSquare className="h-5 w-5 text-[#d67413]" />
+        </div>
+        <div>
+          <h3 className="text-xl font-bold text-white">Podziel się Doświadczeniem</h3>
+          <p className="text-sm text-gray-400">Twoja opinia pomaga innym graczom</p>
+        </div>
+      </div>
 
-      <button className="mt-2 btn">
-        Dodaj komentarz
-      </button>
+      {/* Поле автора */}
+      <div className="space-y-2">
+        <label className="text-sm font-medium text-gray-300 flex items-center gap-2">
+          <User className="h-4 w-4" />
+          Pseudonim (opcjonalnie)
+        </label>
+        <div className="relative">
+          <input
+            type="text"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+            className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#d67413]/50 focus:ring-2 focus:ring-[#d67413]/20 transition-all"
+            placeholder="Wprowadź swój pseudonim..."
+            maxLength={30}
+          />
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500">
+            {author.length}/30
+          </div>
+        </div>
+      </div>
+
+      {/* Поле комментария */}
+      <div className="space-y-2">
+        <label className="text-sm font-medium text-gray-300 flex items-center gap-2">
+          <MessageSquare className="h-4 w-4" />
+          Twój komentarz *
+        </label>
+        <div className="relative">
+          <textarea
+            value={content}
+            onChange={handleContentChange}
+            required
+            className="w-full min-h-[150px] bg-white/5 border border-white/10 rounded-xl p-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-[#d67413]/50 focus:ring-2 focus:ring-[#d67413]/20 transition-all resize-none"
+            placeholder="Napisz swoją opinię o grze, podziel się wygranymi, strategiami lub zapytaj innych graczy..."
+            rows={5}
+            maxLength={1000}
+          />
+          <div className="absolute bottom-3 right-3 flex items-center gap-2">
+            <span className={`text-xs ${characterCount < 10 ? 'text-red-400' : characterCount > 800 ? 'text-amber-400' : 'text-gray-500'}`}>
+              {characterCount}/1000
+            </span>
+            {characterCount >= 10 && characterCount < 1000 && (
+              <Sparkles className="h-3 w-3 text-[#d67413]" />
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Требования */}
+
+
+      {/* Кнопка отправки */}
+      <div className="flex items-center justify-between pt-4 border-t border-white/10">
+        <div className="text-xs text-gray-500">
+          Komentarze są moderowane w ciągu 24h
+        </div>
+        <button
+          type="submit"
+          disabled={isSubmitting || content.length < 10}
+          className="group relative flex items-center gap-3 bg-gradient-to-r from-[#d67413] to-[#b3590d] hover:from-[#e68a29] hover:to-[#d67413] text-white font-semibold px-6 py-3 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-[0_0_25px_rgba(214,116,19,0.4)] disabled:hover:shadow-none overflow-hidden"
+        >
+          {/* Эффект свечения */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 group-disabled:hidden"></div>
+          
+          {isSubmitting ? (
+            <>
+              <div className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              Publikowanie...
+            </>
+          ) : (
+            <>
+              <Send className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              Opublikuj komentarz
+            </>
+          )}
+        </button>
+      </div>
     </form>
   )
 }

@@ -46,54 +46,91 @@
 
 
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Gift, Zap } from "lucide-react"
+import { ExternalLink, Gift, Zap, Crown, Sparkles, Trophy, Star, Shield } from "lucide-react"
 
 export function SoftCta() {
   return (
-    <section id="doswiadczenia" className="py-12 sm:py-16">
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-gradient-to-br from-card to-secondary/50 border border-primary/20 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg">
+    <section id="doswiadczenia" className="py-12 bg-gradient-to-b from-[#171a29] via-[#1a1d2e] to-[#171a29] sm:py-16 md:py-20 relative overflow-hidden">
+      {/* Декоративные элементы */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-[#d67413]/10 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#d67413]/10 rounded-full blur-[100px]"></div>
+      </div>
+
+      {/* Верхние декоративные элементы */}
+      <div className="absolute top-0 left-0 right-0 flex justify-between px-6 opacity-10">
+        <Crown className="h-8 w-8 text-[#d67413]" />
+        <Trophy className="h-8 w-8 text-[#d67413]" />
+        <Star className="h-8 w-8 text-[#d67413]" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative bg-gradient-to-br from-[#1d2036]/80 via-[#1d2036]/90 to-[#171a29] border border-[#d67413]/30 rounded-2xl p-8 sm:p-12 shadow-[0_20px_60px_rgba(214,116,19,0.15)] overflow-hidden">
             
-            <div className="text-center mb-8">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-3">
-                Gotowy na grę?
-              </h3>
-              <p className="text-foreground/80 mb-2">
-                Rozpocznij przygodę z Chicken Road
-              </p>
+            {/* Градиентный фон */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#d67413]/5 via-transparent to-[#d67413]/5 opacity-30"></div>
+            
+            {/* Верхние угловые элементы */}
+            <div className="absolute top-0 left-0 w-24 h-24">
+              <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-[#d67413]/40 rounded-tl-xl"></div>
+            </div>
+            <div className="absolute top-0 right-0 w-24 h-24">
+              <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-[#d67413]/40 rounded-tr-xl"></div>
             </div>
 
-            {/* Две основные кнопки */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* Контент */}
+            <div className="relative z-10">
+              <div className="text-center mb-10">
+
+                
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                  Czas na Prawdziwe Doświadczenie!
+                </h3>
+                <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                  Dołącz do tysięcy graczy i odkryj, dlaczego Chicken Road to jeden z najgorętszych slotów tego sezonu
+                </p>
+              </div>
+
+              {/* Основные кнопки */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                {/* Кнопка регистрации с бонусом */}
+                <Button
+                  size="lg"
+                  className="gap-4 bg-gradient-to-r from-[#d67413] via-[#d67413] to-[#b3590d] hover:from-[#e68a29] hover:via-[#d67413] hover:to-[#e68a29] text-white font-bold text-lg px-8 py-7 rounded-xl shadow-[0_10px_40px_rgba(214,116,19,0.3)] hover:shadow-[0_15px_50px_rgba(214,116,19,0.5)] transition-all duration-300 hover:scale-105 group relative overflow-hidden"
+                >
+                  {/* Эффект свечения */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  
+                  <Crown className="h-6 w-6 group-hover:rotate-12 transition-transform" />
+                  <div className="flex flex-col items-start">
+                    <span className="text-lg font-bold">Zarejestruj się Teraz</span>
+                    <span className="text-sm font-normal opacity-90">+ Odbierz Bonus 500 zł</span>
+                  </div>
+                  <ExternalLink className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+
+                {/* Кнопка демо */}
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="gap-3 border-2 border-[#d67413] text-[#d67413] hover:bg-[#d67413]/10 hover:border-[#e68a29] font-semibold text-lg px-8 py-7 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 group"
+                >
+                  <Zap className="h-5 w-5 group-hover:animate-pulse" />
+                  Zagraj w Trybie Demo
+                </Button>
+              </div>
+
               
-              {/* Кнопка перехода */}
-              <Button
-                size="lg"
-                className="gap-3 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105 font-bold text-base sm:text-lg px-6 sm:px-8 py-6"
-              >
-                <Zap className="h-5 w-5" />
-                Przejdź do kasyna
-                <ExternalLink className="h-4 w-4" />
-              </Button>
-
-              {/* Кнопка бонусов */}
-              <Button
-                size="lg"
-                variant="outline"
-                className="gap-3 bg-gradient-to-r from-accent/10 to-accent/5 hover:bg-accent/20 border-2 border-accent/30 hover:border-accent/50 transition-all duration-300 hover:scale-105 font-bold text-base sm:text-lg px-6 sm:px-8 py-6"
-              >
-                <Gift className="h-5 w-5 text-accent" />
-                Odbierz bonus
-              </Button>
-
             </div>
 
-            {/* Пояснение */}
-            <p className="text-xs text-muted-foreground text-center mt-6">
-              Klikając, akceptujesz regulamin kasyna. Graj odpowiedzialnie.
-            </p>
-
+            {/* Нижние угловые элементы */}
+            <div className="absolute bottom-0 left-0 w-24 h-24">
+              <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-[#d67413]/40 rounded-bl-xl"></div>
+            </div>
+            <div className="absolute bottom-0 right-0 w-24 h-24">
+              <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-[#d67413]/40 rounded-br-xl"></div>
+            </div>
           </div>
         </div>
       </div>
