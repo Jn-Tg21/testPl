@@ -27,7 +27,7 @@ export function Footer() {
                 <Coins className="h-4 w-4" />
                 Odbierz Bonus
               </Button>
-              <Button variant="outline" className="gap-2 border-[#d67413] text-[#d67413] hover:bg-[#d67413]/10 px-6">
+              <Button variant="outline" className="gap-2 bg-white border-[#d67413] text-[#d67413] hover:bg-[#d67413]/10 hover:text-white px-6">
                 <MessageSquare className="h-4 w-4" />
                 Dyskutuj
               </Button>
@@ -101,7 +101,7 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500">E-mail</p>
-                  <p className="text-sm text-gray-300">support@chickenroad.com</p>
+                  <p className="text-sm text-gray-300">support@voxcasino.pl</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">

@@ -13,20 +13,25 @@ export function Header() {
         {/* Логотип и название */}
         <div className="flex items-center gap-3 sm:gap-6">
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* <div className="relative p-2 bg-gradient-to-br from-[#d67413] to-[#b3590d] rounded-lg">
-              <Crown className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-              <div className="absolute inset-0 rounded-lg border border-[#d67413]/50 shadow-inner"></div>
-            </div> */}
-            <div className="flex flex-col">
-              <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight">
-                VOX Casino
-              </h1>
-              <div className="flex items-center gap-1">
-                <Shield className="h-3 w-3 text-[#d67413]" />
-                <span className="text-xs text-gray-300">Licencjonowane kasyno</span>
-              </div>
-            </div>
-          </div>
+  {/* Логотип */}
+  <div className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 flex-shrink-0">
+    <img 
+      src="/logo2.png" 
+      alt="VOX Casino Logo"
+      className="h-full w-full object-contain"
+    />
+  </div>
+  
+  {/* <div className="flex flex-col">
+    <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight">
+      VOX Casino
+    </h1>
+    <div className="flex items-center gap-1">
+      <Shield className="h-3 w-3 text-[#d67413]" />
+      <span className="text-xs text-gray-300">Licencjonowane kasyno</span>
+    </div>
+  </div> */}
+</div>
 
           {/* Навигация для десктопа */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -52,18 +57,6 @@ export function Header() {
               Gry
             </a>
             <a
-              href="#doswiadczenia"
-              className="px-4 py-2 text-sm font-medium text-white hover:text-[#d67413] transition-colors duration-200 hover:bg-white/5 rounded-lg flex items-center gap-2"
-            >
-              Przegląd graczy
-            </a>
-            <a
-              href="#strategie"
-              className="px-4 py-2 text-sm font-medium text-white hover:text-[#d67413] transition-colors duration-200 hover:bg-white/5 rounded-lg flex items-center gap-2"
-            >
-              Strategie
-            </a>
-            <a
               href="#komentarze"
               className="px-4 py-2 text-sm font-medium text-white hover:text-[#d67413] transition-colors duration-200 hover:bg-white/5 rounded-lg flex items-center gap-2"
             >
@@ -82,7 +75,7 @@ export function Header() {
           </Button>
           
           {/* Кнопка входа */}
-          <Button variant="outline" className="hidden sm:flex gap-2 border-[#d67413] text-[#d67413] hover:bg-[#d67413]/10 font-medium px-4 py-2 rounded-lg">
+          <Button variant="outline" className="hidden bg-white sm:flex gap-2 border-[#d67413] text-[#d67413] hover:bg-black/10 hover:text-white font-medium px-4 py-2 rounded-lg">
             Zaloguj się
           </Button>
 
@@ -136,20 +129,6 @@ export function Header() {
               Gry kasynowe
             </a>
             <a
-              href="#doswiadczenia"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-4 py-3 text-white hover:text-[#d67413] transition-colors font-medium hover:bg-white/5 rounded-lg"
-            >
-              Doświadczenia graczy
-            </a>
-            <a
-              href="#strategie"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-4 py-3 text-white hover:text-[#d67413] transition-colors font-medium hover:bg-white/5 rounded-lg"
-            >
-              Strategie gry
-            </a>
-            <a
               href="#komentarze"
               onClick={() => setMobileMenuOpen(false)}
               className="px-4 py-3 text-white hover:text-[#d67413] transition-colors font-medium hover:bg-white/5 rounded-lg"
@@ -161,7 +140,7 @@ export function Header() {
               <Button className="flex-1 bg-gradient-to-r from-[#d67413] to-[#b3590d] text-white font-bold py-3">
                 Rejestracja
               </Button>
-              <Button variant="outline" className="flex-1 border-[#d67413] text-[#d67413] py-3">
+              <Button variant="outline" className="flex-1 border-[#d67413] bg-white text-[#d67413] py-3">
                 Logowanie
               </Button>
             </div>

@@ -52,35 +52,23 @@
 
 import { Button } from "@/components/ui/button"
 import { Crown, Trophy, Sparkles, Zap, Shield, Star, Coins } from "lucide-react"
+import Image from "next/image"
 
 export function Hero() {
   return (
     <section className="relative py-16 sm:py-20 md:py-28 lg:py-32 bg-gradient-to-b from-[#171a29] via-[#1a1d2e] to-[#171a29] overflow-hidden">
       {/* Декоративные элементы фона */}
-      <div className="absolute inset-0">
-        {/* Текстура казино */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="h-full w-full bg-[linear-gradient(45deg,#d67413_1px,transparent_1px)] bg-[length:40px_40px]"></div>
-        </div>
-        
-        {/* Сияющие элементы */}
-        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-[#d67413]/10 rounded-full blur-[100px] animate-pulse"></div>
-        <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-[#d67413]/10 rounded-full blur-[100px] animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#d67413]/5 rounded-full blur-[120px]"></div>
-      </div>
-
-      {/* Лучшие карты по углам */}
-      <div className="absolute top-10 left-10 hidden lg:block opacity-20">
-        <div className="text-9xl">♠</div>
-      </div>
-      <div className="absolute top-10 right-10 hidden lg:block opacity-20">
-        <div className="text-9xl">♥</div>
-      </div>
-      <div className="absolute bottom-10 left-10 hidden lg:block opacity-20">
-        <div className="text-9xl">♣</div>
-      </div>
-      <div className="absolute bottom-10 right-10 hidden lg:block opacity-20">
-        <div className="text-9xl">♦</div>
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/banner.webp" // или casino-background.webp
+          alt="VOX Casino Background"
+          fill
+          className="object-cover object-center"
+          quality={85}
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#171a29]/80 via-[#1a1d2e]/70 to-[#171a29]/80"></div>
       </div>
 
       {/* Основной контент */}
@@ -89,10 +77,9 @@ export function Hero() {
 
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-white drop-shadow-lg">Chicken Road 2</span>
-            <br />
+            <span className="text-white drop-shadow-lg">VOX </span>
             <span className="bg-gradient-to-r from-[#d67413] via-[#e68a29] to-[#d67413] bg-clip-text text-transparent animate-gradient">
-              Crash Game
+              Najlepsze kasyno
             </span>
           </h1>
 
@@ -112,7 +99,7 @@ export function Hero() {
           </div>
 
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Dołącz do elitarnego grona graczy i doświadcz <span className="text-[#d67413] font-semibold">najlepszej rozrywki kasynowej</span> z wypłatami w 5 minut
+            Premie <span className="text-[#d67413] font-semibold">725% aż do 3000 € + 600 FS</span>
           </p>
 
           {/* Основные кнопки */}
@@ -128,7 +115,7 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="gap-3 border-2 border-[#d67413] text-[#d67413] hover:bg-[#d67413]/10 hover:border-[#e68a29] font-semibold text-lg px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105"
+              className="gap-3 border-2 border-[#d67413] bg-white text-[#d67413] hover:bg-[#d67413]/10 hover:border-[#e68a29] hover:text-white font-semibold text-lg px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105"
             >
               Przetestuj Demo
             </Button>

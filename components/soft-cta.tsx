@@ -88,7 +88,7 @@ export function SoftCta() {
                   Czas na Prawdziwe Doświadczenie!
                 </h3>
                 <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                  Dołącz do tysięcy graczy i odkryj, dlaczego Chicken Road to jeden z najgorętszych slotów tego sezonu
+                  Dołącz do tysięcy graczy i dowiedz się, dlaczego kasyno VOX jest najlepsze.
                 </p>
               </div>
 
@@ -114,7 +114,7 @@ export function SoftCta() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="gap-3 border-2 border-[#d67413] text-[#d67413] hover:bg-[#d67413]/10 hover:border-[#e68a29] font-semibold text-lg px-8 py-7 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 group"
+                  className="gap-3 border-2 bg-white border-[#d67413] text-[#d67413] hover:bg-[#d67413]/10 hover:border-[#e68a29] hover:text-white font-semibold text-lg px-8 py-7 rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 group"
                 >
                   <Zap className="h-5 w-5 group-hover:animate-pulse" />
                   Zagraj w Trybie Demo

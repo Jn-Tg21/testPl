@@ -1,85 +1,61 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Gift, Zap, Clock, AlertTriangle, Target, Sparkles, Crown, Coins, Trophy, Shield, Gamepad2, Star } from "lucide-react"
+import { Gift, ShieldCheck, Gamepad2, CreditCard, Trophy, Zap, Star } from "lucide-react"
 
-const features = [
+const casinoFeatures = [
   {
-    icon: Crown,
-    title: "Premium Experience",
-    description: "Doświadczenie na poziomie premium z wysokiej jakości grafiką i efektami",
+    icon: Gift,
+    title: "Hojny Bonus Powitalny",
+    description: "Do 5000 zł + 300 darmowych spinów za pierwsze trzy depozyty - najlepsza oferta na rynku",
     color: "from-[#d67413] to-[#b3590d]",
     bg: "bg-gradient-to-br from-[#d67413]/10 to-[#b3590d]/5",
     border: "border-[#d67413]/30",
   },
   {
-    icon: Zap,
-    title: "Wysokie Mnożniki",
-    description: "Mnożniki mogą osiągnąć nawet x5000 w najlepszych rundach bonusowych",
-    color: "from-amber-500 to-yellow-600",
-    bg: "bg-gradient-to-br from-amber-500/10 to-yellow-600/5",
-    border: "border-amber-500/30",
+    icon: ShieldCheck,
+    title: "Licencjonowane Bezpieczeństwo",
+    description: "Pełna licencja, szyfrowanie SSL i certyfikowane gry RNG dla 100% bezpieczeństwa",
+    color: "from-green-500 to-emerald-600",
+    bg: "bg-gradient-to-br from-green-500/10 to-emerald-600/5",
+    border: "border-green-500/30",
   },
   {
-    icon: Clock,
-    title: "Optymalne Sesje",
-    description: "Perfekcyjna gra na krótkie, intensywne sesje 15-30 minutowe",
+    icon: Gamepad2,
+    title: "Topowi Dostawcy Gier",
+    description: "Spinomenal, EvoPlay, Gamezix - setki slotów, gry stołowe i kasyno na żywo w HD",
     color: "from-blue-500 to-cyan-500",
     bg: "bg-gradient-to-br from-blue-500/10 to-cyan-500/5",
     border: "border-blue-500/30",
   },
   {
-    icon: AlertTriangle,
-    title: "Wysoka Volatility",
-    description: "Wysoka zmienność = duże ryzyko, ale też potencjalnie duże wygrane",
-    color: "from-red-500 to-orange-500",
-    bg: "bg-gradient-to-br from-red-500/10 to-orange-500/5",
-    border: "border-red-500/30",
-  },
-  {
-    icon: Target,
-    title: "Intuicyjna Rozgrywka",
-    description: "Prosta mechanika idealna zarówno dla początkujących jak i doświadczonych",
-    color: "from-green-500 to-emerald-500",
-    bg: "bg-gradient-to-br from-green-500/10 to-emerald-500/5",
-    border: "border-green-500/30",
-  },
-  {
-    icon: Sparkles,
-    title: "Bonus Buy Opcja",
-    description: "Możliwość zakupu bonus rund dla natychmiastowego dostępu do akcji",
+    icon: CreditCard,
+    title: "Nowoczesne Płatności",
+    description: "Karty, e-portfele i kryptowaluty (Bitcoin, Ethereum) - szybkie wpłaty i wypłaty",
     color: "from-purple-500 to-pink-500",
     bg: "bg-gradient-to-br from-purple-500/10 to-pink-500/5",
     border: "border-purple-500/30",
   },
   {
-    icon: Coins,
-    title: "Różnorodne Stawki",
-    description: "Zakład od 0.10€ do 100€ dostosowany do każdego budżetu",
-    color: "from-yellow-500 to-amber-500",
-    bg: "bg-gradient-to-br from-yellow-500/10 to-amber-500/5",
-    border: "border-yellow-500/30",
-  },
-  {
     icon: Trophy,
-    title: "Ranking Wygranych",
-    description: "Tabela liderów z największymi wygranymi danego dnia",
-    color: "from-orange-500 to-red-500",
-    bg: "bg-gradient-to-br from-orange-500/10 to-red-500/5",
-    border: "border-orange-500/30",
+    title: "Cotygodniowe Turnieje",
+    description: "Regularne konkursy ze stałymi nagrodami pieniężnymi - rywalizuj z innymi graczami",
+    color: "from-amber-500 to-yellow-600",
+    bg: "bg-gradient-to-br from-amber-500/10 to-yellow-600/5",
+    border: "border-amber-500/30",
   },
   {
-    icon: Shield,
-    title: "RNG Certified",
-    description: "Certyfikowany generator losowy zapewniający sprawiedliwą grę",
-    color: "from-gray-500 to-slate-600",
-    bg: "bg-gradient-to-br from-gray-500/10 to-slate-600/5",
-    border: "border-gray-500/30",
+    icon: Zap,
+    title: "Szybkie Wypłaty",
+    description: "Natychmiastowe transakcje przez e-portfele i kryptowaluty, minimalne opóźnienia",
+    color: "from-indigo-500 to-purple-600",
+    bg: "bg-gradient-to-br from-indigo-500/10 to-purple-600/5",
+    border: "border-indigo-500/30",
   },
 ]
 
-export function FeaturesGrid() {
+export function VoxCasinoFeatures() {
   return (
-    <section id="strategie" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-[#171a29] to-[#1a1d2e] relative overflow-hidden">
-      {/* Декоративные элементы фона */}
+    <section id="features" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-[#171a29] to-[#1a1d2e] relative overflow-hidden">
+      {/* Элементы декора фона */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#d67413] rounded-full blur-[100px]"></div>
         <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-[#d67413] rounded-full blur-[100px]"></div>
@@ -91,19 +67,19 @@ export function FeaturesGrid() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#d67413]/20 to-[#b3590d]/20 backdrop-blur-sm rounded-full px-6 py-2 mb-4">
               <Star className="h-4 w-4 text-[#d67413]" />
-              <span className="text-sm font-medium text-gray-300">UNIKALNE CECHY</span>
+              <span className="text-sm font-medium text-gray-300">KLUCZOWE CECHY</span>
             </div>
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-              Co Wyróżnia Chicken Road?
+              Co Wyróżnia VOX Casino?
             </h3>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Poznaj kluczowe cechy, które sprawiają, że ten slot jest wyjątkowy
+              Poznaj 6 najważniejszych zalet, które sprawiają, że VOX Casino jest wyjątkowym wyborem
             </p>
           </div>
 
           {/* Сетка фич */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
+            {casinoFeatures.map((feature, index) => (
               <Card
                 key={index}
                 className={`border ${feature.border} ${feature.bg} backdrop-blur-sm hover:backdrop-blur-md transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_8px_32px_rgba(214,116,19,0.15)] group overflow-hidden relative`}
@@ -133,7 +109,7 @@ export function FeaturesGrid() {
                           <div 
                             key={i} 
                             className={`h-1 rounded-full transition-all duration-300 group-hover:scale-y-125 ${
-                              i < 4 ? 'bg-[#d67413]' : 'bg-gray-600'
+                              i < 5 ? 'bg-[#d67413]' : 'bg-gray-600'
                             }`}
                             style={{ width: `${Math.random() * 12 + 8}px` }}
                           />
@@ -152,18 +128,6 @@ export function FeaturesGrid() {
           </div>
 
           {/* Заключительная секция */}
-          <div className="mt-12 text-center">
-            <div className="inline-block p-1 bg-gradient-to-r from-[#d67413] to-[#b3590d] rounded-lg">
-              <div className="bg-[#1d2036] rounded-lg px-6 py-4">
-                <div className="flex items-center justify-center gap-3">
-                  <Gamepad2 className="h-5 w-5 text-[#d67413]" />
-                  <span className="text-sm text-gray-300">
-                    <span className="font-bold text-white">Ważne:</span> Każda z tych cech wpływa na ogólne doświadczenie gry
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
