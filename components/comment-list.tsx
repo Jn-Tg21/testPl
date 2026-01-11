@@ -7,6 +7,7 @@ import { ReplyForm } from "./reply-form"
 import { Heart, MessageSquare, ChevronDown, ChevronUp, Crown, Trophy, Star, MoreVertical, User, Clock } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { CommentContent } from "./commentcontent"
 
 type CommentListProps = {
   comments: UIComment[]
@@ -159,9 +160,7 @@ function CommentItem({
       </div>
       
       {/* Контент комментария */}
-      <p className="text-gray-200 mb-4 leading-relaxed whitespace-pre-wrap">
-        {comment.content}
-      </p>
+      <CommentContent html={comment.content} />
       
       {/* Действия */}
       <div className="flex items-center justify-between pt-4 border-t border-white/10">

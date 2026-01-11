@@ -13,10 +13,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <FeaturedSlots />
         <VoxCasinoOverview />
         <VoxCasinoFeatures />
         <SoftCta />
-        <FeaturedSlots />
         <CommentsSection />
       </main>
       <Footer />

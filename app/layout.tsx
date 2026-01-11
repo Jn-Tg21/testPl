@@ -219,7 +219,7 @@ export default function RootLayout({
         <meta name="geo.position" content="" />
         <meta name="ICBM" content="" />
       </head>
-      <body className={`${geist.className} ${geistMono.className} font-sans antialiased`}>
+      <body>
         {children}
         <Analytics />
       </body>
